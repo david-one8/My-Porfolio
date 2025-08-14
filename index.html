@@ -242,6 +242,102 @@
     .hero-image-glow {
       animation: image-glow 3s ease-in-out infinite;
     }
+
+    /* Premium Marquee Styles */
+    .marquee-container {
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dark .marquee-container {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.6));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .marquee-content {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      gap: 3rem;
+    }
+
+    .marquee-item {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .dark .marquee-item {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .marquee-item:hover {
+      transform: translateY(-2px);
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+    }
+
+    .marquee-item i {
+      font-size: 1.25rem;
+      color: #3b82f6;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Pause animation on hover */
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+
+    /* Gradient fade edges */
+    .marquee-container::before,
+    .marquee-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .marquee-container::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(249, 250, 251, 1), transparent);
+    }
+
+    .marquee-container::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(249, 250, 251, 1), transparent);
+    }
+
+    .dark .marquee-container::before {
+      background: linear-gradient(to right, rgba(17, 24, 39, 1), transparent);
+    }
+
+    .dark .marquee-container::after {
+      background: linear-gradient(to left, rgba(17, 24, 39, 1), transparent);
+    }
   </style>
 </head>
 
@@ -401,6 +497,113 @@
           
           <!-- Bottom reflection effect -->
           <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-primary-500/10 to-transparent rounded-b-2xl blur-sm"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Tech Marquee -->
+  <section class="py-12 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <div class="marquee-container w-full rounded-none py-6">
+      <div class="marquee-content">
+        <!-- First set of items -->
+        <div class="marquee-item">
+          <i class="fab fa-react"></i>
+          <span>React.js</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-node-js"></i>
+          <span>Node.js</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-database"></i>
+          <span>MongoDB</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-js-square"></i>
+          <span>JavaScript ES6+</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Responsive Design</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-git-alt"></i>
+          <span>Git & GitHub</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-code"></i>
+          <span>RESTful APIs</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-aws"></i>
+          <span>AWS Cloud</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-rocket"></i>
+          <span>Next.js</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-sass"></i>
+          <span>SCSS/Sass</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-wind"></i>
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-fire"></i>
+          <span>Firebase</span>
+        </div>
+        
+        <!-- Duplicate set for seamless loop -->
+        <div class="marquee-item">
+          <i class="fab fa-react"></i>
+          <span>React.js</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-node-js"></i>
+          <span>Node.js</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-database"></i>
+          <span>MongoDB</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-js-square"></i>
+          <span>JavaScript ES6+</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Responsive Design</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-git-alt"></i>
+          <span>Git & GitHub</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-code"></i>
+          <span>RESTful APIs</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-aws"></i>
+          <span>AWS Cloud</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-rocket"></i>
+          <span>Next.js</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fab fa-sass"></i>
+          <span>SCSS/Sass</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-wind"></i>
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="marquee-item">
+          <i class="fas fa-fire"></i>
+          <span>Firebase</span>
         </div>
       </div>
     </div>

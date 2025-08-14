@@ -1,4 +1,4 @@
-# David Fule — Portfolio
+# My Portfolio
 
 A modern, responsive single-page portfolio built with HTML, Tailwind CSS (CDN), and vanilla JavaScript.
 
